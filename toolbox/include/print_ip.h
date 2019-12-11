@@ -1,9 +1,35 @@
 
 #pragma once
 
-#include <iostream>
+#include "is_container.h"
 
-template<typename T>
-void print_ip(const T& v) {
-    std::cout << v << std::endl;
+#include <iostream>
+#include <type_traits>
+
+template <typename T>
+typename std::enable_if_t<std::is_integral_v<T>> print_ip(const T& v) {
+    const uint8_t len = sizeof(T);
+    uint8_t byte = (v >> (8 * (len - 1))) & 0xff;
+    std::cout << +byte;
+    for (int8_t i = len - 2; i >= 0; --i) {
+        byte = (v >> (8 * i)) & 0xff;
+        std::cout << "." << +byte;
+    }
+    std::cout << std::endl;
+}
+
+template <typename T>
+typename std::enable_if_t<is_container_v<T>> print_ip(const T& container) {
+    auto it = container.begin();
+    if (it == container.end()) return;
+
+    std::cout << *it++;
+    for (; it != container.end(); ++it)
+        std::cout << "." << *it;
+    std::cout << std::endl;
+}
+
+template <>
+void print_ip(const std::string& s) {
+    std::cout << s << std::endl;
 }
