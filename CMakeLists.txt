@@ -31,11 +31,11 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 
 
 # tests
-# option(ENABLE_TESTS "Enable tests" ON)
-# if (${ENABLE_TESTS})
-#     enable_testing()
-#     add_subdirectory(tests)
-# endif()
+option(ENABLE_TESTS "Enable tests" ON)
+if (${ENABLE_TESTS})
+    enable_testing()
+    add_subdirectory(tests)
+endif()
 
 
 # packing
