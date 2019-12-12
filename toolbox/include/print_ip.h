@@ -4,6 +4,7 @@
 #include "is_container.h"
 
 #include <iostream>
+#include <tuple>
 #include <type_traits>
 
 template <typename T>
@@ -32,4 +33,16 @@ typename std::enable_if_t<is_container_v<T>> print_ip(const T& container) {
 template <>
 void print_ip(const std::string& s) {
     std::cout << s << std::endl;
+}
+
+// https://en.cppreference.com/w/cpp/utility/integer_sequence
+template<typename Tuple, std::size_t... Is>
+void print_tuple_impl(const Tuple& t, std::index_sequence<Is...>) {
+    ((std::cout << (Is == 0? "" : ".") << std::get<Is>(t)), ...);
+    std::cout << std::endl;
+}
+
+template <typename... Args>
+void print_ip(const std::tuple<Args...>& t) {
+    print_tuple_impl(t, std::index_sequence_for<Args...>{});
 }

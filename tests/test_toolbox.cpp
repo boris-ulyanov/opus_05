@@ -64,4 +64,13 @@ BOOST_AUTO_TEST_CASE(toolbox_test_print_ip_container) {
     BOOST_CHECK(output.is_equal("1.2.3\n5.6.7\n"));
 }
 
+BOOST_AUTO_TEST_CASE(toolbox_test_print_ip_tuple) {
+    boost::test_tools::output_test_stream output;
+    {
+        cout_redirect guard(output.rdbuf());
+        print_ip(std::tuple{111, 222});
+    }
+    BOOST_CHECK(output.is_equal("111.222\n"));
+}
+
 BOOST_AUTO_TEST_SUITE_END()
