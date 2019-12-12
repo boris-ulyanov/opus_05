@@ -7,6 +7,10 @@
 #include <tuple>
 #include <type_traits>
 
+// for clang version 7.0.0
+template< class T >
+constexpr bool std::is_integral_v = std::is_integral<T>::value;
+
 template <typename T>
 typename std::enable_if_t<std::is_integral_v<T>> print_ip(const T& v) {
     const uint8_t len = sizeof(T);
