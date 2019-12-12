@@ -37,8 +37,21 @@ void print_ip(const std::string& s) {
 
 // https://en.cppreference.com/w/cpp/utility/integer_sequence
 template<typename Tuple, std::size_t... Is>
-void print_tuple_impl(const Tuple& t, std::index_sequence<Is...>) {
-    ((std::cout << (Is == 0? "" : ".") << std::get<Is>(t)), ...);
+void print_tuple_impl(const Tuple& t, const std::index_sequence<Is...>) {
+    using type0 = std::tuple_element_t<0, Tuple>;
+    constexpr int len = sizeof...(Is);
+
+    // так работает
+    // static_assert( std::is_same_v<type0, std::tuple_element_t<1, Tuple>>, "tuple types different" );
+    const type0 values[len] = {(
+        // а так нет => error: expected primary-expression before ‘static_assert’
+        // static_assert(std::is_same_v<type0, std::tuple_element_t<Is, Tuple>>, "tuple types different"),
+        std::get<Is>(t)
+    )...};
+
+    std::cout << values[0];
+    for (int i = 1; i < len; ++i)
+        std::cout << "." << values[i];
     std::cout << std::endl;
 }
 
