@@ -1,3 +1,6 @@
+/**
+ * @brief is_container helper module
+ */
 
 // https://stackoverflow.com/questions/12042824/how-to-write-a-type-trait-is-container-or-is-vector
 

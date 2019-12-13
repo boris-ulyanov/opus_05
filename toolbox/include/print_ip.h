@@ -1,3 +1,6 @@
+/**
+ * @brief print_ip module
+ */
 
 #pragma once
 
@@ -15,6 +18,12 @@ namespace std {
 }
 #endif
 
+
+/**
+ * @brief      Prints ip for integral params
+ *
+ * @param[in]  v     integral value to print
+ */
 template <typename T>
 typename std::enable_if_t<std::is_integral_v<T>> print_ip(const T& v) {
     const uint8_t len = sizeof(T);
