@@ -7,9 +7,13 @@
 #include <tuple>
 #include <type_traits>
 
-// for clang version 7.0.0
-template< class T >
-constexpr bool std::is_integral_v = std::is_integral<T>::value;
+// так и не осилил на лету определять is_integral_v при ее отсутствии
+#if __GLIBCXX__ < 20181206
+namespace std {
+    template<typename T>
+    constexpr bool is_integral_v = std::is_integral<T>::value;
+}
+#endif
 
 template <typename T>
 typename std::enable_if_t<std::is_integral_v<T>> print_ip(const T& v) {
