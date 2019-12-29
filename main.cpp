@@ -14,5 +14,8 @@ int main() {
     print_ip(std::vector{1, 2, 3});
     print_ip(std::list{5, 6, 7});
 
+    // compile error
+    // print_ip(std::tuple{int(111), short(222)});
+
     return 0;
 }
