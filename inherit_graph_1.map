@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structis__container__helper.html" title="is_container_helper\l\&lt; Ts \&gt;" alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node2" href="$structis__all__same.html" title="variadic version is_same https://en.cppreference.com/w/cpp/types/is_same " alt="" coords="153,5,292,32"/>
+<area shape="rect" id="node3" href="$structis__all__same.html" title="is_all_same\&lt; T, Ts... \&gt;" alt="" coords="140,56,305,83"/>
+<area shape="rect" id="node5" href="$structis__container.html" title="is_container helper module " alt="" coords="147,107,298,133"/>
+<area shape="rect" id="node4" href="$structis__all__same_3_01T_00_01T_00_01Ts_8_8_8_01_4.html" title="is_all_same\&lt; T, T,\l Ts... \&gt;" alt="" coords="353,49,491,90"/>
 </map>

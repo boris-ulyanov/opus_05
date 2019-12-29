@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">print_ip
-   &#160;<span id="projectnumber">1.2.6</span>
+   &#160;<span id="projectnumber">1.2.7</span>
    </div>
   </td>
  </tr>
@@ -55,7 +55,8 @@
 <div class="title">print_ip.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="is__container_8h_source.html">is_container.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="is__all__same_8h_source.html">is_all_same.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="is__container_8h_source.html">is_container.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
@@ -64,7 +65,8 @@ Include dependency graph for print_ip.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="print__ip_8h__incl.png" border="0" usemap="#print__ip_8h" alt=""/></div>
 <map name="print__ip_8h" id="print__ip_8h">
-<area shape="rect" id="node2" href="is__container_8h.html" title="is_container.h" alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node2" href="is__all__same_8h.html" title="is_all_same.h" alt="" coords="5,80,113,107"/>
+<area shape="rect" id="node4" href="is__container_8h.html" title="is_container.h" alt="" coords="189,80,300,107"/>
 </map>
 </div>
 </div>
@@ -91,9 +93,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a4f04ef1c968289ee88d025f3c22a3801"><td class="memTemplParams" colspan="2">template&lt;typename Tuple , std::size_t... Is&gt; </td></tr>
 <tr class="memitem:a4f04ef1c968289ee88d025f3c22a3801"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="is__container_8h.html#a7b6fa50260d0977759673788c372544d">void</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#a4f04ef1c968289ee88d025f3c22a3801">print_tuple_impl</a> (const Tuple &amp;t, const std::index_sequence&lt; Is... &gt;)</td></tr>
 <tr class="separator:a4f04ef1c968289ee88d025f3c22a3801"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae11d9ef44a8bc10033c7afa7b4470448"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:ae11d9ef44a8bc10033c7afa7b4470448"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="is__container_8h.html#a7b6fa50260d0977759673788c372544d">void</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#ae11d9ef44a8bc10033c7afa7b4470448">print_ip</a> (const std::tuple&lt; Args... &gt; &amp;t)</td></tr>
-<tr class="separator:ae11d9ef44a8bc10033c7afa7b4470448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba10e1cb4eb0235075334c0eb1f1afa"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:acba10e1cb4eb0235075334c0eb1f1afa"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="is__all__same_8h.html#a2af710022ee5e5bd0d062357d8d6bf85">is_all_same_v</a>&lt; Args... &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__ip_8h.html#acba10e1cb4eb0235075334c0eb1f1afa">print_ip</a> (const std::tuple&lt; Args... &gt; &amp;t)</td></tr>
+<tr class="separator:acba10e1cb4eb0235075334c0eb1f1afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -164,14 +166,14 @@ template&lt;&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae11d9ef44a8bc10033c7afa7b4470448"></a>
+<a class="anchor" id="acba10e1cb4eb0235075334c0eb1f1afa"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename... Args&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="is__container_8h.html#a7b6fa50260d0977759673788c372544d">void</a> print_ip </td>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="is__all__same_8h.html#a2af710022ee5e5bd0d062357d8d6bf85">is_all_same_v</a>&lt;Args...&gt; &gt; print_ip </td>
           <td>(</td>
           <td class="paramtype">const std::tuple&lt; Args... &gt; &amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
