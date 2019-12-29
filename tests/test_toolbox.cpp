@@ -1,5 +1,6 @@
 #define BOOST_TEST_MODULE toolbox_test_module
 
+#include "is_all_same.h"
 #include "is_container.h"
 #include "print_ip.h"
 
@@ -71,6 +72,26 @@ BOOST_AUTO_TEST_CASE(toolbox_test_print_ip_tuple) {
         print_ip(std::tuple{111, 222});
     }
     BOOST_CHECK(output.is_equal("111.222\n"));
+}
+
+BOOST_AUTO_TEST_CASE(toolbox_test_is_all_same) {
+    bool v;
+
+    v = is_all_same_v<short> == true;               BOOST_CHECK(v);
+    v = is_all_same_v<short, short> == true;        BOOST_CHECK(v);
+    v = is_all_same_v<short, short, short> == true; BOOST_CHECK(v);
+
+    v = is_all_same_v<int> == true;             BOOST_CHECK(v);
+    v = is_all_same_v<int, int> == true;        BOOST_CHECK(v);
+    v = is_all_same_v<int, int, int> == true;   BOOST_CHECK(v);
+
+    v = is_all_same_v<short, int> == false;         BOOST_CHECK(v);
+    v = is_all_same_v<short, short, int> == false;  BOOST_CHECK(v);
+
+    v = is_all_same_v<std::string, std::string> == true;                BOOST_CHECK(v);
+    v = is_all_same_v<std::vector<char>, std::vector<char>> == true;    BOOST_CHECK(v);
+    v = is_all_same_v<std::vector<char>, std::vector<int>> == false;    BOOST_CHECK(v);
+    v = is_all_same_v<std::vector<char>, std::string> == false;         BOOST_CHECK(v);
 }
 
 BOOST_AUTO_TEST_SUITE_END()
